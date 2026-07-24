@@ -1,0 +1,23 @@
+{
+  "name": "second-brain-assistant",
+  "version": "0.0.0",
+  "description": "A personal learning assistant built from scratch, growing one small increment at a time.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/cli/index.ts",
+    "start": "tsx src/cli/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.23.1",
+    "typescript": "^7.0.2"
+  }
+}
