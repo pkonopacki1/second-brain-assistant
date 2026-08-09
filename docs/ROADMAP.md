@@ -1,7 +1,7 @@
 # MVP
 
 - [x] Add linter
-- [ ] Add formatter
+- [x] Add formatter
 - [ ] Add .env file reader
 - [ ] Add interface for AI provider
 - [ ] Implement Ai provider for opencode
