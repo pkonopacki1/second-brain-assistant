@@ -12,7 +12,9 @@
     "start": "tsx src/cli/index.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --no-error-on-unmatched-pattern",
-    "format": "prettier --write ."
+    "lint:fix": "eslint . --fix --no-error-on-unmatched-pattern",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [],
   "author": "",
