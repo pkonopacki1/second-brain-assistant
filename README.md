@@ -45,9 +45,9 @@ Small, stable interfaces so every later feature slots in without rewrites:
    OpenAI-compatible `/chat/completions`, so swapping models is mostly a `baseURL` + model-id
    change.
 2. **Tool ABI** — `ToolSpec { name, description, inputSchema, validate, execute(ctx, args) }`
-   + an in-memory `ToolRegistry` + a `ToolContext`. Every capability is a tool.
+   - an in-memory `ToolRegistry` + a `ToolContext`. Every capability is a tool.
 3. **Turn loop** — `assemble context → call model → if tool calls: execute + re-inject results
-   + repeat, else: finish`. Bounded by a max-steps limit.
+   - repeat, else: finish`. Bounded by a max-steps limit.
 4. **Result/error discipline** — a `Result<T,E>` type and structured errors with model-facing
    recovery hints.
 
@@ -110,20 +110,20 @@ you want to use or learn.
 
 ### Summary
 
-| # | Functionality | Concepts / topics it covers |
-|---|---|---|
-| 1 | Structured capture + end-of-day workflow | Structured output (JSON Schema), tool design, forgiving validation, recovery hints |
-| 2 | Context engineering + linked garden | System prompt as a map, prompt-cache discipline, token limits, breadcrumb navigation |
-| 3 | Long-term memory + progress assessment | Observational memory (observer/reflector), knowledge base for agents |
-| 4 | Research helper (web search) | Agentic RAG, native vs custom tools, prompt-injection safety |
-| 5 | Planning + calendar (MCP) | Model Context Protocol, trusted tools, human confirmation |
-| 6 | Observability + evaluation | Tracing hierarchy, offline/online evals, tool-selection scoring |
-| 7 | Production backbone + scheduled habits | Job/Run/Item model, scheduler, resumable jobs, autonomous triggers |
-| 8 | Multi-provider + local models + safety | Provider gateway, model strategy, local models, moderation |
-| 9 | Multi-agent + interface | Multi-agent architectures, delegation, streaming UI, Code Mode |
-| 10 | Multimodality (opportunistic) | Attachments, image/audio, STT/TTS |
-| 11 | Self-improving prompts | Automatic prompt optimization, DSPy/AX signatures |
-| F | Language-learning agent (future) | Profile-by-tools, spaced repetition |
+| #   | Functionality                            | Concepts / topics it covers                                                          |
+| --- | ---------------------------------------- | ------------------------------------------------------------------------------------ |
+| 1   | Structured capture + end-of-day workflow | Structured output (JSON Schema), tool design, forgiving validation, recovery hints   |
+| 2   | Context engineering + linked garden      | System prompt as a map, prompt-cache discipline, token limits, breadcrumb navigation |
+| 3   | Long-term memory + progress assessment   | Observational memory (observer/reflector), knowledge base for agents                 |
+| 4   | Research helper (web search)             | Agentic RAG, native vs custom tools, prompt-injection safety                         |
+| 5   | Planning + calendar (MCP)                | Model Context Protocol, trusted tools, human confirmation                            |
+| 6   | Observability + evaluation               | Tracing hierarchy, offline/online evals, tool-selection scoring                      |
+| 7   | Production backbone + scheduled habits   | Job/Run/Item model, scheduler, resumable jobs, autonomous triggers                   |
+| 8   | Multi-provider + local models + safety   | Provider gateway, model strategy, local models, moderation                           |
+| 9   | Multi-agent + interface                  | Multi-agent architectures, delegation, streaming UI, Code Mode                       |
+| 10  | Multimodality (opportunistic)            | Attachments, image/audio, STT/TTS                                                    |
+| 11  | Self-improving prompts                   | Automatic prompt optimization, DSPy/AX signatures                                    |
+| F   | Language-learning agent (future)         | Profile-by-tools, spaced repetition                                                  |
 
 ### 1. Structured capture + end-of-day workflow
 
@@ -151,7 +151,7 @@ An observer pass writes short observations after context compaction; a reflector
 them into `memory/progress.md`; tools query progress and gaps.
 
 - **Serves:** "assess progress," "find where I'm lagging," "suggest focus."
-- **Concepts:** observational memory (observer/reflector); building knowledge bases *for*
+- **Concepts:** observational memory (observer/reflector); building knowledge bases _for_
   agents; "human owns content, AI owns organization"; notes that assume zero prior context.
 
 ### 4. Research helper (web search)
