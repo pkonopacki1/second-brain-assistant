@@ -1,13 +1,10 @@
-# Personal Learning Assistant
+# Second Brain Assistant
 
 A personal assistant built **from scratch** in TypeScript, growing one small increment at a
 time. The goal is twofold: **learn the core concepts of building AI agents** and end up with a
-**genuinely useful daily assistant**.
+**genuinely useful second brain assistant**.
 
-The assistant starts as a minimal command-line agent over a folder of markdown notes and grows
-by adding tools and capabilities — never by rewriting the core.
-
-## What it helps with
+## Planned features
 
 1. **Learning assistant** — capture problem areas at the end of the day, create learning
    plans, explain how a topic fits among other technologies, find gaps in fundamentals,
@@ -16,18 +13,6 @@ by adding tools and capabilities — never by rewriting the core.
    deeper.
 3. **Week / day planner** — plan days and weeks, connected to your calendar.
 4. **Future** — language-learning assistant.
-
-## Principles
-
-- **Stable foundations, dynamic surface** — invest in the seams that rarely change; expect
-  churn above them.
-- **Minimal core = filesystem + memory + loop** — grow by adding tools and upgrading models,
-  not by rewriting the core.
-- **Primitives over features** — model events/items, not a rigid `messages` table.
-- **Guarantee structure, never values** — structured output + deterministic confirmation for
-  risky actions.
-- **Generalize, don't specialize** — rules and reasoning processes over case-by-case patches.
-- **Forward-compatibility test** — "does my system get better as models improve?"
 
 ## Tech choices
 

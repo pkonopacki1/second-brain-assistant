@@ -2,7 +2,7 @@
 
 - [x] Add linter
 - [x] Add formatter
-- [ ] Add .env file reader
+- [x] Add .env file reader
 - [ ] Add interface for AI provider
 - [ ] Implement Ai provider for opencode
       ...
