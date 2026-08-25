@@ -3,8 +3,10 @@
 - [x] Add linter
 - [x] Add formatter
 - [x] Add .env file reader
-- [ ] Add interface for AI provider
-- [ ] Implement Ai provider for opencode
+- [ ] Communication with Agent over cli
+  - [ ] Add interface for AI provider
+  - [ ] Implement Ai provider for opencode
+  - [ ] CLI communication
       ...
 
 # Additional
