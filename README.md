@@ -13,4 +13,3 @@ time. The goal is twofold: **learn the core concepts of building AI agents** and
    deeper.
 3. **Week / day planner** — plan days and weeks, connected to your calendar.
 4. **Future** — language-learning assistant.
-
