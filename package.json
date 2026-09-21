@@ -29,5 +29,8 @@
     "tsx": "^4.23.1",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-eslint": "^8.66.0"
+  },
+  "dependencies": {
+    "@openrouter/sdk": "^1.2.136"
   }
 }
