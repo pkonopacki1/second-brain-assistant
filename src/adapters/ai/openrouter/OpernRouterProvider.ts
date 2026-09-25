@@ -13,7 +13,24 @@ interface OpenRouterConfig {
   apiKey: string;
 }
 
-function normalizeMessage(response: SendChatCompletionRequestResponse): AiNormalizedMessage {}
+function normalizeMessage(response: SendChatCompletionRequestResponse): AiNormalizedMessage {
+  if (response instanceof ReadableStream) {
+    throw new Error('Expected a non-streaming response');
+  }
+  const message = response.choices[0]?.message;
+  if (!message || !message.content) {
+    throw new Error('No message found in response');
+  }
+
+  if (message.content instanceof Array) {
+    throw new Error('Message content type not supported');
+  }
+
+  return {
+    role: message.role,
+    content: message.content,
+  };
+}
 
 function createOpenRouterRequest(request: AiRequest): ChatRequest {
   return {
@@ -26,9 +43,6 @@ export function createOpenRouterProvider(config: OpenRouterConfig): AiProvider {
   const client = new OpenRouter({
     apiKey: config.apiKey,
   });
-
-  //todo:
-  // 2. complete normalize message
 
   return {
     generate: async (request): Promise<Result<AiNormalizedMessage, string>> => {
