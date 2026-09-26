@@ -1,5 +1,5 @@
-import type { AiMessageRole, Message } from './Types';
+import type { AiNormalizedMessage, AiRequest, Result } from './Types';
 
 export interface AiProvider {
-  generate(message: Message, role: AiMessageRole): Message;
+  generate(request: AiRequest): Promise<Result<AiNormalizedMessage, string>>;
 }
