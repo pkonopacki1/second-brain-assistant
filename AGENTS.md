@@ -20,14 +20,19 @@ Verify with `typecheck` then `lint` before calling work done.
 Source dependencies point **inward only**.
 
 ```
-src/domain/       entities + ports (AiProvider, Types). Imports NOTHING.
-src/application/  use cases, composition root (runtime.ts, config.ts). Imports domain only.
-src/adapters/     provider implementations (OpencodeProvider). Imports inward.
+src/domain/       entities + ports (AiProvider, Types). Imports nothing.
+src/application/  use cases. Imports domain only.
+src/adapters/     provider implementations (OpenRouterProvider). Imports domain ports.
+src/composition/  configuration and DI wiring. May import every layer.
+src/index.ts      CLI entry point. Calls the composition root and application use cases.
 ```
-
-A violation of the dependency rule is always a blocker, never a nit.
-Frameworks, `fetch`, env vars, and OpenRouter specifics belong in adapters or the
-composition root — never in `domain/`.
+The composition root is the only place that may cross boundaries. It reads
+configuration, constructs concrete adapter implementations, and injects them
+through domain ports into application use cases.
+Frameworks, fetch, env vars, and provider-specific details belong in adapters
+or the composition root — never in domain or application use cases.
+A violation of the dependency rule outside src/composition/ is always a
+blocker, never a nit.
 
 ## Conventions
 
